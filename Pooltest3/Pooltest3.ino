@@ -57,10 +57,10 @@ void setup()
   pinMode(MissionSwitch, INPUT); //Mission switch connection as input
   
   delay(1000); // delay to allow the ESC to recognize the stopped signal
-  /*
+  
   Serial.begin(9600);
   Serial.println("Directions (d=Down,f=Forward,l=Left,r=Right)");
-  */
+  
 }
 
 void loop() 
@@ -71,16 +71,16 @@ void loop()
   {
     //CHOOSE WHICH MOTIONS YOU WANT TO RUN HERE, COMMENT OUT THE ONES YOU DON'T WANT TO USE BY PLACING // IN FRONT OF IT
     //THE ACTUAL CODE FOR EACH FUNCTION IS FURTHER DOWN
-    down();
+    //down();
     //forward();
     //right();
     //left();
     //hover();
     //up();
     //each();  //RUN THIS ONE IF YOU NEED TO TEST EACH INDIVIDUAL THRUSTER
-    still();   //RUN THIS AT THE END EVERYTIME TO STOP THE AUV FROM MOVING LONG ENOUGH TO KILL THE THRUSTERS
+    //still();   //RUN THIS AT THE END EVERYTIME TO STOP THE AUV FROM MOVING LONG ENOUGH TO KILL THE THRUSTERS
   }
-  /*
+  
   if (Mission == HIGH || dir!='q')
   {
     dir= Serial.read();
@@ -103,7 +103,7 @@ void loop()
    }
 
   }
-  */
+  
 
 }
 
@@ -239,7 +239,7 @@ void each()
     delay(5000); //THIS IS HOW LONG THE THRUSTERS ARE STOPPED IN MILLISECONDS (1000 MILLISECONDS = 1 SECOND)
     
 }
-void right()
+void still()
 {
   //stop them all
   servo1.writeMicroseconds(1500); // send "stop" signal to ESC.
